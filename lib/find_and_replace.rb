@@ -6,12 +6,15 @@ class Replace
   def magic(text, find, replace)
     changed = text.gsub!(find, replace)
     puts changed
+    return changed
   end
 end
 
 example = Replace.new()
-puts "Enter sentence you want to modify."
-text = gets.chomp()
+# commented out per simple_file.txt reading
+# puts "Enter sentence you want to modify."
+# # text = gets.chomp()
+text = File.read("simple_file.txt")
 puts "Enter the word you want to find."
 find = gets.chomp()
 puts "Enter the word you want to replace find with"
