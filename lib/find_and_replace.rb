@@ -4,7 +4,7 @@ class Replace
   end
 
   def magic(text, find, replace)
-    changed = text.gsub!(find, replace)
+    changed = text.gsub!(/#{find}/i, replace)
     puts changed
     sample = File.open("../simple_file.txt",  "w+")
     sample.puts(changed)
@@ -19,6 +19,7 @@ example = Replace.new()
 text = File.read("../simple_file.txt")
 puts "Enter the word you want to find."
 find = gets.chomp()
+
 puts "Enter the word you want to replace find with"
 replace = gets.chomp()
 
